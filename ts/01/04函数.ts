@@ -366,3 +366,6 @@ alert("card: " + pickedCard1.card + " of " + pickedCard1.suit);
 
 let pickedCard6 = pickCard(15);
 alert("card: " + pickedCard2.card + " of " + pickedCard2.suit);
+
+
+export default{}

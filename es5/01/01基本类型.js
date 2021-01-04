@@ -1,0 +1,143 @@
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var isDone = false; // 布尔型
+var str = '字符串';
+var nun = 1; //    数字类型
+var arr1 = [1, 2, 3, 4, 5]; //数组
+var arr = [1, 2, 3, 4, 5]; // 数组
+//元组 tuple
+var x;
+x = ['string', 1];
+//枚举 enum
+/*
+枚举
+enum类型是对JavaScript标准数据类型的一个补充。
+像C#等其它语言一样，使用枚举类型可以为一组数值赋予友好的名字。
+
+
+*/
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Grren"] = 1] = "Grren";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+var c = Color.Grren;
+console.log('Color=', Color);
+console.log('c=', c);
+/*
+默认情况下，从0开始为元素编号。
+你也可以手动的指定成员的数值。
+例如，我们将上面的例子改成从 1开始编号：
+如果不手动赋值那么下一个的值就是上一个的值加1
+*/
+var Style;
+(function (Style) {
+    Style[Style["width"] = 1] = "width";
+    Style[Style["heihgt"] = 100] = "heihgt";
+    Style[Style["padding"] = 200] = "padding";
+    Style[Style["margin"] = 2] = "margin";
+})(Style || (Style = {}));
+//赋值
+var s = Style.heihgt;
+console.log('Style=', Style);
+console.log('s=', s);
+/*
+any
+有时候，我们会想要为那些在编程阶段还不清楚类型的变量指定一个类型。
+这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
+这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。
+那么我们可以使用 any类型来标记这些变量：
+*/
+var notSure = 4;
+notSure = 'str';
+notSure = {
+    name: 'ygs',
+    address: 'g x'
+};
+//当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：
+var list = [
+    1,
+    true,
+    'str',
+    {
+        name: 'any'
+    },
+    ,
+    [
+        {
+            title: '标题1'
+        },
+        {
+            title: '标题2'
+        },
+    ],
+];
+//Void
+/*
+某种程度上来说，void类型像是与any类型相反，它表示没有任何类型。
+当一个函数没有返回值时，你通常会见到其返回值类型是 void：
+*/
+//没有返回值
+function warnUser() {
+    console.log('warnUser');
+}
+//声明一个void类型的变量没有什么大用，因为你只能为它赋予undefined和null：
+var unusable = null;
+var un = undefined;
+/*
+Null 和 Undefined
+TypeScript里，undefined和null两者各自有自己的类型分别叫做undefined和null。
+ 和 void相似，它们的本身的类型用处不是很大：
+*/
+var u = undefined;
+var n = null;
+function printLabel(labelledObj) {
+    //返回label
+    return labelledObj.value;
+}
+//value 设置为number数字类型
+var value = printLabel({
+    label: 'label',
+    value: 1
+});
+console.log('value==', value);
+function createSquareConfig(config) {
+    return __assign({}, config);
+}
+var square = createSquareConfig({
+    color: 'red',
+    name: 'Square name'
+});
+console.log('square=', square);
+/*
+TypeScript具有ReadonlyArray<T>类型，它与Array<T>相似，只是把所有可变方法去掉了
+，因此可以确保数组创建后再也不能被修改：
+*/
+var Rarr = [1, 2, 3, 4];
+var ra = Rarr;
+/*
+
+上面代码的最后一行，
+可以看到就算把整个ReadonlyArray赋值到一个普通数组也是不可以的。
+ 但是你可以用类型断言重写：
+*/
+Rarr = ra;
+//只读对象
+var Obj = { name: 'name', address: 'g x' };
+var RObj = Obj;
+console.log('RObj==', RObj);
+exports["default"] = {};
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,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LENBQUMsU0FBUyxFQUFFLEtBQUssQ0FBQyxDQUFDO0FBcUI5QixTQUFTLGtCQUFrQixDQUFDLE1BQXFCO0lBQzdDLG9CQUNPLE1BQU0sRUFDWDtBQUNOLENBQUM7QUFFRCxJQUFJLE1BQU0sR0FBaUIsa0JBQWtCLENBQUM7SUFDMUMsS0FBSyxFQUFDLEtBQUs7SUFDWCxJQUFJLEVBQUUsYUFBYTtDQUN0QixDQUFDLENBQUM7QUFFSCxPQUFPLENBQUMsR0FBRyxDQUFDLFNBQVMsRUFBQyxNQUFNLENBQUMsQ0FBQTtBQWU3Qjs7O0VBR0U7QUFFRixJQUFJLElBQUksR0FBYSxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDO0FBQ2xDLElBQUksRUFBRSxHQUEwQixJQUFJLENBQUM7QUFFckM7Ozs7O0VBS0U7QUFDRixJQUFJLEdBQUcsRUFBYyxDQUFDO0FBRXRCLE1BQU07QUFDTixJQUFJLEdBQUcsR0FBVSxFQUFDLElBQUksRUFBQyxNQUFNLEVBQUMsT0FBTyxFQUFDLEtBQUssRUFBQyxDQUFDO0FBQzdDLElBQUksSUFBSSxHQUFxQixHQUFHLENBQUM7QUFFakMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxRQUFRLEVBQUMsSUFBSSxDQUFDLENBQUE7QUFHMUIscUJBQWMsRUFBRSxDQUFBIiwiZmlsZSI6IjAxLzAx5Z+65pys57G75Z6LLmpzIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGlzRG9uZTogYm9vbGVhbiA9IGZhbHNlOyAvLyDluIPlsJTlnotcbmxldCBzdHI6IHN0cmluZyA9ICflrZfnrKbkuLInO1xubGV0IG51bjogbnVtYmVyID0gMTsgLy8gICAg5pWw5a2X57G75Z6LXG5sZXQgYXJyMTogbnVtYmVyW10gPSBbMSwgMiwgMywgNCwgNV07IC8v5pWw57uEXG5sZXQgYXJyOiBBcnJheTxudW1iZXI+ID0gWzEsIDIsIDMsIDQsIDVdOyAvLyDmlbDnu4RcblxuLy/lhYPnu4QgdHVwbGVcbmxldCB4OiBbc3RyaW5nLCBudW1iZXJdO1xueCA9IFsnc3RyaW5nJywgMV07XG5cbi8v5p6a5Li+IGVudW1cbi8qXG7mnprkuL5cbmVudW3nsbvlnovmmK/lr7lKYXZhU2NyaXB05qCH5YeG5pWw5o2u57G75Z6L55qE5LiA5Liq6KGl5YWF44CCIFxu5YOPQyPnrYnlhbblroPor63oqIDkuIDmoLfvvIzkvb/nlKjmnprkuL7nsbvlnovlj6/ku6XkuLrkuIDnu4TmlbDlgLzotYvkuojlj4vlpb3nmoTlkI3lrZfjgIJcblxuXG4qL1xuZW51bSBDb2xvciB7XG4gICAgUmVkLFxuICAgIEdycmVuLFxuICAgIEJsdWUsXG59XG5sZXQgYzogQ29sb3IgPSBDb2xvci5HcnJlbjtcblxuY29uc29sZS5sb2coJ0NvbG9yPScsIENvbG9yKTtcbmNvbnNvbGUubG9nKCdjPScsIGMpO1xuXG4vKlxu6buY6K6k5oOF5Ya15LiL77yM5LuOMOW8gOWni+S4uuWFg+e0oOe8luWPt+OAglxu5L2g5Lmf5Y+v5Lul5omL5Yqo55qE5oyH5a6a5oiQ5ZGY55qE5pWw5YC844CCXG7kvovlpoLvvIzmiJHku6zlsIbkuIrpnaLnmoTkvovlrZDmlLnmiJDku44gMeW8gOWni+e8luWPt++8mlxu5aaC5p6c5LiN5omL5Yqo6LWL5YC86YKj5LmI5LiL5LiA5Liq55qE5YC85bCx5piv5LiK5LiA5Liq55qE5YC85YqgMVxuKi9cbmVudW0gU3R5bGUge1xuICAgIHdpZHRoID0gMSxcbiAgICBoZWloZ3QgPSAxMDAsXG4gICAgcGFkZGluZyA9IDIwMCxcbiAgICBtYXJnaW4gPSAyLFxufVxuLy/otYvlgLxcbmxldCBzOiBTdHlsZSA9IFN0eWxlLmhlaWhndDtcbmNvbnNvbGUubG9nKCdTdHlsZT0nLCBTdHlsZSk7XG5jb25zb2xlLmxvZygncz0nLCBzKTtcblxuLypcbmFueSBcbuacieaXtuWAme+8jOaIkeS7rOS8muaDs+imgeS4uumCo+S6m+WcqOe8lueoi+mYtuautei/mOS4jea4healmuexu+Wei+eahOWPmOmHj+aMh+WumuS4gOS4quexu+Wei+OAglxu6L+Z5Lqb5YC85Y+v6IO95p2l6Ieq5LqO5Yqo5oCB55qE5YaF5a6577yM5q+U5aaC5p2l6Ieq55So5oi36L6T5YWl5oiW56ys5LiJ5pa55Luj56CB5bqT44CCXG7ov5nnp43mg4XlhrXkuIvvvIzmiJHku6zkuI3luIzmnJvnsbvlnovmo4Dmn6Xlmajlr7nov5nkupvlgLzov5vooYzmo4Dmn6XogIzmmK/nm7TmjqXorqnlroPku6zpgJrov4fnvJbor5HpmLbmrrXnmoTmo4Dmn6XjgIJcbumCo+S5iOaIkeS7rOWPr+S7peS9v+eUqCBhbnnnsbvlnovmnaXmoIforrDov5nkupvlj5jph4/vvJpcbiovXG5sZXQgbm90U3VyZTogYW55ID0gNDtcbm5vdFN1cmUgPSAnc3RyJztcbm5vdFN1cmUgPSB7XG4gICAgbmFtZTogJ3lncycsXG4gICAgYWRkcmVzczogJ2cgeCcsXG59O1xuXG4vL+W9k+S9oOWPquefpemBk+S4gOmDqOWIhuaVsOaNrueahOexu+Wei+aXtu+8jGFueeexu+Wei+S5n+aYr+acieeUqOeahOOAgiDmr5TlpoLvvIzkvaDmnInkuIDkuKrmlbDnu4TvvIzlroPljIXlkKvkuobkuI3lkIznmoTnsbvlnovnmoTmlbDmja7vvJpcbmxldCBsaXN0OiBhbnlbXSA9IFtcbiAgICAxLFxuICAgIHRydWUsXG4gICAgJ3N0cicsXG4gICAge1xuICAgICAgICBuYW1lOiAnYW55JyxcbiAgICB9LFxuICAgICxcbiAgICBbXG4gICAgICAgIHtcbiAgICAgICAgICAgIHRpdGxlOiAn5qCH6aKYMScsXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICAgIHRpdGxlOiAn5qCH6aKYMicsXG4gICAgICAgIH0sXG4gICAgXSxcbl07XG5cbi8vVm9pZFxuLypcbuafkOenjeeoi+W6puS4iuadpeivtO+8jHZvaWTnsbvlnovlg4/mmK/kuI5hbnnnsbvlnovnm7jlj43vvIzlroPooajnpLrmsqHmnInku7vkvZXnsbvlnovjgIJcbuW9k+S4gOS4quWHveaVsOayoeaciei/lOWbnuWAvOaXtu+8jOS9oOmAmuW4uOS8muingeWIsOWFtui/lOWbnuWAvOexu+Wei+aYryB2b2lk77yaXG4qL1xuLy/msqHmnInov5Tlm57lgLxcbmZ1bmN0aW9uIHdhcm5Vc2VyKCk6IHZvaWQge1xuICAgIGNvbnNvbGUubG9nKCd3YXJuVXNlcicpO1xufVxuXG4vL+WjsOaYjuS4gOS4qnZvaWTnsbvlnovnmoTlj5jph4/msqHmnInku4DkuYjlpKfnlKjvvIzlm6DkuLrkvaDlj6rog73kuLrlroPotYvkuoh1bmRlZmluZWTlkoxudWxs77yaXG5sZXQgdW51c2FibGU6IHZvaWQgPSBudWxsO1xubGV0IHVuOiB2b2lkID0gdW5kZWZpbmVkO1xuXG4vKlxuTnVsbCDlkowgVW5kZWZpbmVkXG5UeXBlU2NyaXB06YeM77yMdW5kZWZpbmVk5ZKMbnVsbOS4pOiAheWQhOiHquacieiHquW3seeahOexu+Wei+WIhuWIq+WPq+WBmnVuZGVmaW5lZOWSjG51bGzjgIJcbiDlkowgdm9pZOebuOS8vO+8jOWug+S7rOeahOacrOi6q+eahOexu+Wei+eUqOWkhOS4jeaYr+W+iOWkp++8mlxuKi9cblxubGV0IHU6IHVuZGVmaW5lZCA9IHVuZGVmaW5lZDtcbmxldCBuOiBzdHJpbmcgPSBudWxsO1xuXG4vKlxuIOaOpeWPo1xuIOaOpeWPo+aYr+S4gOS4quaKveixoeexu++8jOWmguaenOe7p+aJv+ivpeaOpeWPo+W/hemhu+imgeWOu+WunueOsFxuIFR5cGVTY3JpcHTnmoTmoLjlv4Pljp/liJnkuYvkuIDmmK/lr7nlgLzmiYDlhbfmnInnmoTnu5PmnoTov5vooYznsbvlnovmo4Dmn6XjgIIgXG4g5a6D5pyJ5pe26KKr56ew5YGa4oCc6bit5byP6L6o5Z6L5rOV4oCd5oiW4oCc57uT5p6E5oCn5a2Q57G75Z6L5YyW4oCd44CCXG4gIOWcqFR5cGVTY3JpcHTph4zvvIzmjqXlj6PnmoTkvZznlKjlsLHmmK/kuLrov5nkupvnsbvlnovlkb3lkI3lkozkuLrkvaDnmoTku6PnoIHmiJbnrKzkuInmlrnku6PnoIHlrprkuYnlpZHnuqbjgIJcbiovXG5cbmludGVyZmFjZSBJTGFiZWxsZWRWYWx1ZSB7XG4gICAgbGFiZWw6IHN0cmluZzsgLy8g5a2X56ym5LiyXG4gICAgdmFsdWU6IG51bWJlcjsgLy8g5pWw5a2XXG59XG5cbmZ1bmN0aW9uIHByaW50TGFiZWwobGFiZWxsZWRPYmo6IElMYWJlbGxlZFZhbHVlKTogbnVtYmVyIHtcbiAgICAvL+i/lOWbnmxhYmVsXG4gICAgcmV0dXJuIGxhYmVsbGVkT2JqLnZhbHVlO1xufVxuXG4vL3ZhbHVlIOiuvue9ruS4um51bWJlcuaVsOWtl+exu+Wei1xubGV0IHZhbHVlOiBudW1iZXIgPSBwcmludExhYmVsKHtcbiAgICBsYWJlbDogJ2xhYmVsJyxcbiAgICB2YWx1ZTogMSxcbn0pO1xuXG5jb25zb2xlLmxvZygndmFsdWU9PScsIHZhbHVlKTtcblxuLypcbuWPr+mAieWxnuaAp1xu5o6l5Y+j6YeM55qE5bGe5oCn5LiN5YWo6YO95piv5b+F6ZyA55qE44CCIOacieS6m+aYr+WPquWcqOafkOS6m+adoeS7tuS4i+WtmOWcqO+8jOaIluiAheagueacrOS4jeWtmOWcqOOAgiBcbuWPr+mAieWxnuaAp+WcqOW6lOeUqOKAnG9wdGlvbiBiYWdz4oCd5qih5byP5pe25b6I5bi455So77yMXG7ljbPnu5nlh73mlbDkvKDlhaXnmoTlj4LmlbDlr7nosaHkuK3lj6rmnInpg6jliIblsZ7mgKfotYvlgLzkuobjgIJcbiovXG5cbmludGVyZmFjZSBJU3F1YXJlQ29uZmlnIHtcbiAgICBjb2xvcj86IHN0cmluZztcbiAgICB3aWR0aD86IG51bWJlcjtcbiAgICBuYW1lOiBzdHJpbmc7XG59XG5cbmludGVyZmFjZSBJU3F1YXJlVmFsdWUge1xuICAgIGNvbG9yPzogc3RyaW5nO1xuICAgIHdpZHRoPzogbnVtYmVyO1xuICAgIG5hbWU6IHN0cmluZztcbn1cblxuZnVuY3Rpb24gY3JlYXRlU3F1YXJlQ29uZmlnKGNvbmZpZzogSVNxdWFyZUNvbmZpZyk6IElTcXVhcmVWYWx1ZSB7XG4gICAgcmV0dXJuIHtcbiAgICAgICAgLi4uY29uZmlnLFxuICAgIH07XG59XG5cbmxldCBzcXVhcmU6IElTcXVhcmVWYWx1ZSA9IGNyZWF0ZVNxdWFyZUNvbmZpZyh7XG4gICAgY29sb3I6J3JlZCcsXG4gICAgbmFtZTogJ1NxdWFyZSBuYW1lJyxcbn0pO1xuXG5jb25zb2xlLmxvZygnc3F1YXJlPScsc3F1YXJlKVxuXG5cblxuLypcbuWPquivu+WxnuaAp1xu5LiA5Lqb5a+56LGh5bGe5oCn5Y+q6IO95Zyo5a+56LGh5Yia5Yia5Yib5bu655qE5pe25YCZ5L+u5pS55YW25YC844CCIOS9oOWPr+S7peWcqOWxnuaAp+WQjeWJjeeUqCByZWFkb25seeadpeaMh+WumuWPquivu+WxnuaApzpcblxuKi9cblxuaW50ZXJmYWNlIElQb2ludHtcbiAgICByZWFkb25seSB4Om51bWJlclxuICAgIHJlYWRvbmx5IHk6bnVtYmVyXG59XG5cbi8qXG5UeXBlU2NyaXB05YW35pyJUmVhZG9ubHlBcnJheTxUPuexu+Wei++8jOWug+S4jkFycmF5PFQ+55u45Ly877yM5Y+q5piv5oqK5omA5pyJ5Y+v5Y+Y5pa55rOV5Y675o6J5LqGXG7vvIzlm6DmraTlj6/ku6Xnoa7kv53mlbDnu4TliJvlu7rlkI7lho3kuZ/kuI3og73ooqvkv67mlLnvvJpcbiovXG5cbmxldCBSYXJyOiBudW1iZXJbXSA9IFsxLCAyLCAzLCA0XTtcbmxldCByYTogUmVhZG9ubHlBcnJheTxudW1iZXI+ID0gUmFycjtcblxuLypcblxu5LiK6Z2i5Luj56CB55qE5pyA5ZCO5LiA6KGM77yMXG7lj6/ku6XnnIvliLDlsLHnrpfmiormlbTkuKpSZWFkb25seUFycmF56LWL5YC85Yiw5LiA5Liq5pmu6YCa5pWw57uE5Lmf5piv5LiN5Y+v5Lul55qE44CCXG4g5L2G5piv5L2g5Y+v5Lul55So57G75Z6L5pat6KiA6YeN5YaZ77yaXG4qL1xuUmFyciA9IHJhIGFzIG51bWJlcltdO1xuXG4vL+WPquivu+WvueixoVxubGV0IE9iajogb2JqZWN0ID17bmFtZTonbmFtZScsYWRkcmVzczonZyB4J307XG5sZXQgUk9iajogUmVhZG9ubHk8b2JqZWN0PiA9IE9iajtcbiBcbmNvbnNvbGUubG9nKCdST2JqPT0nLFJPYmopXG5cblxuZXhwb3J0IGRlZmF1bHR7fSJdfQ==

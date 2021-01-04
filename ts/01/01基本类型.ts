@@ -191,3 +191,6 @@ let Obj: object ={name:'name',address:'g x'};
 let RObj: Readonly<object> = Obj;
  
 console.log('RObj==',RObj)
+
+
+export default{}
