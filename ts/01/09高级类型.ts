@@ -532,4 +532,16 @@ interface Map<T> {
 let keys: keyof Map<number>; // string
 let value: Map<number>['foo']; // number
 
+
+/*
+映射类型
+一个常见的任务是将一个已知的类型每个属性都变为可选的：
+*/
+
+
+
+
+
+
+
 export {};
