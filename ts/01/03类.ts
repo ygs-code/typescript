@@ -214,39 +214,39 @@ TypeScript支持通过getters/setters来截取对对象成员的访问。
 首先，我们从一个没有使用存取器的例子开始。
 */
 
-class Employee2 {
-    fullName: string;
-}
+// class Employee2 {
+//     fullName: string;
+// }
 
-let employee = new Employee2();
-employee.fullName = 'Bob Smith';
-if (employee.fullName) {
-    console.log(employee.fullName);
-}
+// let employee = new Employee2();
+// employee.fullName = 'Bob Smith';
+// if (employee.fullName) {
+//     console.log(employee.fullName);
+// }
 
-let passcode = 'secret passcode';
-// get 和 set 会编译成 Object.defineProperty get和set自定义属性
-class Employee3 {
-    private _fullName: string;
+// let passcode = 'secret passcode';
+// // get 和 set 会编译成 Object.defineProperty get和set自定义属性
+// class Employee3 {
+//     private _fullName: string;
 
-    get fullName(): string {
-        return this._fullName;
-    }
+//     get fullName(): string {
+//         return this._fullName;
+//     }
 
-    set fullName(newName: string) {
-        if (passcode && passcode == 'secret passcode') {
-            this._fullName = newName;
-        } else {
-            console.log('Error: Unauthorized update of employee!');
-        }
-    }
-}
+//     set fullName(newName: string) {
+//         if (passcode && passcode == 'secret passcode') {
+//             this._fullName = newName;
+//         } else {
+//             console.log('Error: Unauthorized update of employee!');
+//         }
+//     }
+// }
 
-let employee3 = new Employee3();
-employee3.fullName = 'Bob Smith';
-if (employee.fullName) {
-    console.log('employee.fullName=', employee.fullName);
-}
+// let employee3 = new Employee3();
+// employee3.fullName = 'Bob Smith';
+// if (employee.fullName) {
+//     console.log('employee.fullName=', employee.fullName);
+// }
 
 /*
 静态属性
